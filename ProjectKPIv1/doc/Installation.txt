@@ -1,6 +1,0 @@
-1. Letakkan project di dalam satu folder
-2. Buka Project dengan Netbeans
-3. Import dump file sql di Folder Sql
-4. Jalankan server Glassfish 4.0
-5. Jalankan server mysql
-6. Jalankan project melalui netbeans, lalu akan mucul di dalam browser
