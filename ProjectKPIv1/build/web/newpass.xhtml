@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>New Password | Tugas KPI</title>
+        <meta name="viewport" content="width=device-width"/>
+    </h:head>
+    <h:body>
+        <h:form>
+            <table>
+            <tr>
+                <td>
+                    Silahkan tetapkan password anda yang baru :
+                </td>
+            </tr>
+            <tr>
+                <td><h:outputText value="Password"/></td>
+                <td>
+                    <h:inputSecret id="pass" value="#{ResetPassword.newPassword}">
+                        <f:ajax listener="#{ResetPassword.checkPassword}" render="notifPassword" />
+                    </h:inputSecret>
+                </td>
+                <td>
+                    <h:outputText id="notifPassword" value="#{ResetPassword.notifPassword}" />
+                </td>
+            </tr>
+            <tr>
+                <td><h:outputText value="Confirm Password"/></td>
+                <td>
+                    <h:inputSecret id="conf_pass" value="#{ResetPassword.newConfPassword}">
+                        <f:ajax listener="#{ResetPassword.checkConfPassword}" render="notifConfPassword" />
+                    </h:inputSecret>
+                </td>
+                <td>
+                    <h:outputText id="notifConfPassword" value="#{ResetPassword.notifConfPassword}" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><h:commandButton value="Reset password" action="#{ResetPassword.createNewPassword}"></h:commandButton></td>
+            </tr>
+            </table>
+        </h:form>
+    </h:body>
+</html>
+
